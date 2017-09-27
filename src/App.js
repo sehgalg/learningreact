@@ -14,20 +14,11 @@ import {
 } from 'semantic-ui-react'
 
 const FixedMenu = () => (
-  <Menu fixed='top' size='large'>
+  <Menu fixed='top' inverted>
     <Container>
-      <Menu.Item as='a' active>Home</Menu.Item>
-      <Menu.Item as='a'>Work</Menu.Item>
-      <Menu.Item as='a'>Company</Menu.Item>
-      <Menu.Item as='a'>Careers</Menu.Item>
-      <Menu.Menu position='right'>
-        <Menu.Item className='item'>
-          <Button as='a'>Log in</Button>
-        </Menu.Item>
-        <Menu.Item>
-          <Button as='a' primary>Sign Up</Button>
-        </Menu.Item>
-      </Menu.Menu>
+    <Menu.Item as='a' position="right">Sign Up</Menu.Item>
+    <Menu.Item as='a' position="right">Sign Up As Chef</Menu.Item>
+    <Menu.Item as='a' active position="right">Log in</Menu.Item>
     </Container>
   </Menu>
 )
@@ -57,10 +48,10 @@ export default class App extends Component {
             vertical
           >
             <Container>
-              <Menu inverted  secondary size='small' position="right">
-                <Menu.Item as='a' active position="right">Log in</Menu.Item>
-                <Menu.Item as='a' position="right">Sign Up</Menu.Item>
-                <Menu.Item as='a' position="right">Sign Up As Chef</Menu.Item>
+              <Menu size='small' inverted pointing secondary  >
+                <Menu.Item as='a' active position='right'>Log in</Menu.Item>
+                <Menu.Item as='a' >Sign Up</Menu.Item>
+                <Menu.Item as='a'>Sign Up As Chef</Menu.Item>
               </Menu>
             </Container>
 
@@ -77,10 +68,13 @@ export default class App extends Component {
                 inverted
                 style={{ fontSize: '1.7em', fontWeight: 'normal' }}
               />
-              <Button primary size='huge'>
-                Get Started
-                <Icon name='right arrow' />
-              </Button>
+              <div className='ui right aligned category search item'>
+              <div className='ui transparent icon input'>
+                <input inverted className='prompt' type='text' placeholder='Search animals...' />
+                <i  className='search link icon' />
+              </div>
+              <div className='results' />
+            </div>
             </Container>
           </Segment>
         </Visibility>
@@ -102,7 +96,7 @@ export default class App extends Component {
               <Grid.Column floated='right' width={6}>
                 <Image
                   bordered
-                  rounded
+                  
                   size='large'
                   src='/assets/images/wireframe/white-image.png'
                 />
